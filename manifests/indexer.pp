@@ -4,11 +4,10 @@ class logstash::indexer (
   $config_template = 'logstash/indexer.conf.erb',
   $web_backend     = 'elasticsearch:///?local'
 ) {
+
   require logstash::params
   require logstash
-  $conf = '/etc/logstash/indexer'
-  $process_name = 'indexer'
-
+ 
   file { "$logstash::params::etc_dir/indexer.conf":
     ensure  => present,
     content  => template($config_template),
@@ -19,13 +18,13 @@ class logstash::indexer (
     group   => 'root',
     mode    => '0644',
     content => template('logstash/logstash-indexer-upstart.erb'),
+    notify  => Service['logstash-indexer'],
   }
 
   service { 'logstash-indexer':
     ensure    => running,
-    subscribe => [
-      File["$logstash::params::etc_dir/indexer.conf"],
-    ]
+    provider  => 'upstart',
+    require => File['/etc/init/logstash-indexer.conf'],
   }
 
 }
