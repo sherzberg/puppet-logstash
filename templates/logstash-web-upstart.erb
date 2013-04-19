@@ -1,0 +1,10 @@
+description "Logstash web service"
+
+start on runlevel [12345]
+stop on runlevel [0]
+
+respawn
+
+script
+	java -jar <%= scope.lookupvar('logstash::params::bin_file') %> web --backend <%= @elasticsearch_backend %>
+end script

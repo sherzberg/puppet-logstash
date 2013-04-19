@@ -1,0 +1,5 @@
+.bundle
+vendor
+spec/fixtures
+pkg
+*.swp

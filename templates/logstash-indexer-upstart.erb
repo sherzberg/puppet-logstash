@@ -1,0 +1,10 @@
+description "Logstash indexer service"
+
+start on runlevel [12345]
+stop on runlevel [0]
+
+respawn
+
+script
+	java -jar <%= scope.lookupvar('logstash::params::bin_file') %> agent -v -f <%= scope.lookupvar('logstash::params::etc_dir') %>/indexer.conf
+end script
