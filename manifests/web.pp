@@ -1,8 +1,7 @@
 class logstash::web (
   $elasticsearch_backend = "elasticsearch:///?local"
-) {
-  
-  require logstash::params
+) inherits logstash::params {
+
   require logstash
 
   file { '/etc/init/logstash-web.conf':

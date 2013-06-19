@@ -2,9 +2,7 @@
 #
 # Common class for logstash.
 #
-class logstash {
-  require logstash::params
-
+class logstash inherits logstash::params {
   include stdlib
   include java
 
