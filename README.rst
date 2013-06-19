@@ -28,6 +28,8 @@ This sets up a logstash indexer:
     class my::host {
         
         class {'logstash::indexer': }
+        
+    }
 
 
 This sets up a logstash web instance:
@@ -37,6 +39,8 @@ This sets up a logstash web instance:
     class my::host {
         
         class {'logstash::web': }
+        
+    }
 
 
 Credit
@@ -44,3 +48,9 @@ Credit
 
 This module was derived mostly from `garethr/puppet-logstash`_
 .. _`garethr/puppet-logstash`: https://github.com/garethr/garethr-logstash
+
+Contributers
+============
+
+- @malthe
+- @sherzberg
