@@ -1,0 +1,18 @@
+input {
+	tcp {
+		type => "tcp"
+		# these settings should match the output of the agent
+		mode => "server"
+		host => "localhost"
+		port => "9999"
+	}
+}
+
+output {
+	stdout { 
+		debug => true debug_format => "json"
+	}
+	file {
+		path => "/var/log/logstash-shipper.log"
+	}	
+}

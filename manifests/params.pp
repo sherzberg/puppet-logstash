@@ -4,8 +4,8 @@
 # This class is automatically loaded into classes that uses values set here.
 class logstash::params (
   $base_url = 'http://semicomplete.com/files/logstash',
-  $layout = 'monolithic',
-  $version = '1.1.12' ) {
+  $layout = 'flatjar',
+  $version = '1.1.13' ) {
   $bin_dir = '/opt/logtash'
   $etc_dir = '/etc/logstash'
   $log_dir = '/var/log/logstash'
