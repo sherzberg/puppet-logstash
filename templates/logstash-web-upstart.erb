@@ -6,5 +6,5 @@ stop on runlevel [0]
 respawn
 
 script
-	java -jar <%= scope.lookupvar('logstash::params::bin_file') %> web --backend <%= @elasticsearch_backend %>
+	java -jar <%= scope.lookupvar('logstash::params::bin_file') %> web
 end script

@@ -1,6 +1,4 @@
-class logstash::web (
-  $elasticsearch_backend = "elasticsearch:///?local"
-) inherits logstash::params {
+class logstash::web inherits logstash::params {
 
   require logstash
 

@@ -2,7 +2,6 @@
 class logstash::indexer (
   $workers         = 1,
   $config_template = 'logstash/indexer.conf.erb',
-  $web_backend     = 'elasticsearch:///?local'
 ) inherits logstash::params {
 
   require logstash

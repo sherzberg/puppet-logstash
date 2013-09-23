@@ -3,7 +3,6 @@
 # Common class for logstash.
 #
 class logstash inherits logstash::params {
-  include stdlib
   include java
 
   file {
